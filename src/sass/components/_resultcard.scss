@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.result-card {
+  background-color: white;
+  border-radius: 1em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 1em 2em;
+  transform: translateY(-30%);
+}
+
+.result-label {
+  display: block;
+  font-size: .75rem;
+  color: $clr-darkgray;
+  font-weight: $fw-bold;
+  text-transform: uppercase;
+  margin: .40em;
+}
+
+.result {
+  font-size: 1.25rem;
+  font-weight: $fw-medium;
+  margin-bottom: 1em;
+}
