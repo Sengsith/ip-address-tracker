@@ -1,12 +1,12 @@
 import React from "react";
 
-const ResultCard = () => {
+const ResultCard = ({ inputValue }) => {
   return (
     <div className="result-card container">
       <label className="result-label" htmlFor="ip-address">
         IP Address
       </label>
-      <div className="result">192.212.174.101</div>
+      <div className="result">{inputValue}</div>
       <label className="result-label" htmlFor="location">
         Location
       </label>
