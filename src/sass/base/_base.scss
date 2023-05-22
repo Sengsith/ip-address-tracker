@@ -1,28 +1,33 @@
 @use '../abstracts' as *;
 
 body {
+  font-family: $ff-primary; 
   max-width: 100vw;
-  font-family: $ff-primary;
+  max-height: 100vh;
 }
 
 #root {
   margin: 0 auto;
-  padding: 2rem 0;
   text-align: center;
+}
+
+.title_wrapper {
   background-image: url('../assets/pattern-bg-mobile.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-bottom: 1em;
 }
 
 .title {
   color: white;
+  padding-top: 1em;
   margin-bottom: 1em;
   font-weight: $fw-medium;
 }
 
 @media (min-width: 1440px) {
-  #root {
+  .title_wrapper {
     background-image: url('../assets/pattern-bg-desktop.png');
   }
 }

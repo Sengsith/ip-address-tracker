@@ -2,23 +2,23 @@ import React, { useRef } from "react";
 
 import iconArrow from "../assets/icon-arrow.svg";
 
-const InputIP = ({ setInputValue }) => {
+const InputIP = ({ setResultObject }) => {
   const inputRef = useRef(null);
 
-  const getData = async () => {
+  const getIpData = async () => {
     // https://geo.ipify.org/
-    const URL = `https://geo.ipify.org/api/v2/country?apiKey=${
+    const URL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
       import.meta.env.VITE_REACT_API_KEY
     }&ipAddress=${inputRef.current.value}`;
     const response = await fetch(URL);
     const data = await response.json();
-    console.log(data);
+    setResultObject(data);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setInputValue(inputRef.current.value);
-    getData();
+    getIpData();
+    inputRef.current.value = "";
   };
 
   return (
