@@ -1,2 +1,5 @@
-.map-container {
+.leaflet-container {
+  flex-grow: 1;
+  position: relative;
+  z-index: 5;
 }

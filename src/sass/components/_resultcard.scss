@@ -4,20 +4,21 @@
   background-color: white;
   border-radius: 1em;
   position: absolute;
+  z-index: 10;
   left: 0;
   right: 0;
   padding: 1em 2em;
-  transform: translateY(-50%);
-  z-index: 10;
+  transform: translateY(-35%);
 }
 
 .result-label {
   display: block;
-  font-size: .75rem;
+  font-size: .65rem;
   color: $clr-darkgray;
   font-weight: $fw-bold;
   text-transform: uppercase;
   margin: .40em;
+  letter-spacing: .25em;
 }
 
 .result {

@@ -1,5 +1,7 @@
 .app {
-  max-width: 80rem;
   margin: 0 auto;
-  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
