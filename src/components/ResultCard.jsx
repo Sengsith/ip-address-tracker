@@ -65,7 +65,6 @@ const ResultCard = ({ resultObject }) => {
   useEffect(() => {
     // Set location object to be resultObject's every time it changes
     setLocation(resultObject.location);
-    console.log(resultObject);
   }, [resultObject]);
 
   return (
