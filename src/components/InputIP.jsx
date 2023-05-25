@@ -8,7 +8,7 @@ const InputIP = ({ setResultObject }) => {
   // On initial load, we want to make an API call to get user's public IP
   useEffect(() => {
     const noIpURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
-      import.meta.env.VITE_REACT_API_KEY
+      import.meta.env.VITE_API_KEY
     }`;
     getIpData(noIpURL);
   }, []);
@@ -25,7 +25,7 @@ const InputIP = ({ setResultObject }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const IpURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
-      import.meta.env.VITE_REACT_API_KEY
+      import.meta.env.VITE_API_KEY
     }&ipAddress=${inputRef.current.value}`;
     getIpData(IpURL);
     inputRef.current.value = "";
