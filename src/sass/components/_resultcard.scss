@@ -5,10 +5,10 @@
   border-radius: 1em;
   position: absolute;
   z-index: 10;
+  top: 11.5em;
   left: 0;
   right: 0;
   padding: 1em 2em;
-  transform: translateY(-35%);
 }
 
 .result-label {
@@ -25,4 +25,40 @@
   font-size: 1.25rem;
   font-weight: $fw-medium;
   margin-bottom: 1em;
+}
+
+@media (min-width: 1440px) {
+  .result-card {
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+    align-items: flex-start;
+    top: 15em;
+    padding: 2em;
+  }
+
+  .result-flex-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .result-label {
+    width: fit-content;
+    margin-inline: 0;
+    margin-top: 0;
+  }
+
+  .result {
+    text-align: start;
+    margin-bottom: 0;
+    font-size: 1.55rem;
+  }
+
+  .vl {
+    width: .07rem;
+    height: 3.5rem;
+    background-color: $clr-darkgray;
+    flex-grow: 0;
+  }
 }

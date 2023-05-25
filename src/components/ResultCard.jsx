@@ -69,44 +69,35 @@ const ResultCard = ({ resultObject }) => {
 
   return (
     <div className="result-card container">
-      <label className="result-label" htmlFor="ip-address">
-        IP Address
-      </label>
-      <div className="result">
-        {Object.keys(resultObject).length === 0 ? (
-          "192.212.174.101"
-        ) : (
-          <>{resultObject.ip}</>
-        )}
+      <div className="ip-container result-flex-item">
+        <label className="result-label" htmlFor="ip-address">
+          IP Address
+        </label>
+        <div className="result">{resultObject.ip}</div>
       </div>
-      <label className="result-label" htmlFor="location">
-        Location
-      </label>
-      <div className="result">
-        {location == undefined ? (
-          "Brooklyn, NY 10001"
-        ) : (
-          <>
-            {location.city}, {getAbbreviation(location.region)}{" "}
-            {location.postalCode}
-          </>
-        )}
+      <div className="vl"></div>
+      <div className="location-container result-flex-item">
+        <label className="result-label" htmlFor="location">
+          Location
+        </label>
+        <div className="result">
+          {location.city}, {getAbbreviation(location.region)}{" "}
+          {location.postalCode}
+        </div>
       </div>
-      <label className="result-label" htmlFor="timezone">
-        Timezone
-      </label>
-      <div className="result">
-        UTC {location == undefined ? " -05:00" : <>{location.timezone}</>}
+      <div className="vl"></div>
+      <div className="timezone-container result-flex-item">
+        <label className="result-label" htmlFor="timezone">
+          Timezone
+        </label>
+        <div className="result">UTC {location.timezone}</div>
       </div>
-      <label className="result-label" htmlFor="isp">
-        ISP
-      </label>
-      <div className="result">
-        {Object.keys(resultObject).length === 0 ? (
-          "SpaceX Starlink"
-        ) : (
-          <>{resultObject.isp}</>
-        )}
+      <div className="vl"></div>
+      <div className="isp-container result-flex-item">
+        <label className="result-label" htmlFor="isp">
+          ISP
+        </label>
+        <div className="result">{resultObject.isp}</div>
       </div>
     </div>
   );

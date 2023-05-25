@@ -9,14 +9,18 @@ const App = () => {
   const [resultObject, setResultObject] = useState({});
 
   return (
-    <div className="app">
+    <main className="app">
       <div className="title_wrapper">
         <h1 className="title">IP Address Tracker</h1>
         <InputIP setResultObject={setResultObject} />
       </div>
-      <ResultCard resultObject={resultObject} />
-      <LeafletMap resultObject={resultObject} />
-    </div>
+      {resultObject?.location && (
+        <>
+          <ResultCard resultObject={resultObject} />
+          <LeafletMap resultObject={resultObject} />
+        </>
+      )}
+    </main>
   );
 };
 

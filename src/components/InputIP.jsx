@@ -1,23 +1,33 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 import iconArrow from "../assets/icon-arrow.svg";
 
 const InputIP = ({ setResultObject }) => {
   const inputRef = useRef(null);
 
-  const getIpData = async () => {
-    // https://geo.ipify.org/
-    const URL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
+  // On initial load, we want to make an API call to get user's public IP
+  useEffect(() => {
+    const noIpURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
       import.meta.env.VITE_REACT_API_KEY
-    }&ipAddress=${inputRef.current.value}`;
-    const response = await fetch(URL);
+    }`;
+    getIpData(noIpURL);
+  }, []);
+
+  // Function to do API call
+  const getIpData = async (url) => {
+    // https://geo.ipify.org/
+    const response = await fetch(url);
     const data = await response.json();
     setResultObject(data);
   };
 
+  // When user submits IP address
   const handleSubmit = (e) => {
     e.preventDefault();
-    getIpData();
+    const IpURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${
+      import.meta.env.VITE_REACT_API_KEY
+    }&ipAddress=${inputRef.current.value}`;
+    getIpData(IpURL);
     inputRef.current.value = "";
   };
 
